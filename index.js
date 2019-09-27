@@ -73,11 +73,11 @@ const importMockFiles = (mockFiles, mockPath) => {
 };
 
 async function build(mockPath, outputfile) {
-  let mockFiles = glob.sync("**/*.ts", {
+  let mockFiles = glob.sync("**/*.js", {
     cwd: mockPath
   });
   mockFiles = mockFiles.concat(
-    glob.sync("../src/**/**/_mock.ts", {
+    glob.sync("../src/**/**/_mock.js", {
       cwd: mockPath,
       ignore: "* node_modules"
     })
